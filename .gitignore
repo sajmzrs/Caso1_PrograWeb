@@ -1,0 +1,8 @@
+bin/
+obj/
+.vs/
+.vscode/
+tmp/
+*.user
+*.suo
+Caso1_Entrega.zip

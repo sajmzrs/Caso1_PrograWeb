@@ -1,0 +1,28 @@
+@inject IConfiguration Configuration
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - @Configuration["Hotel:Nombre"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="border-bottom mb-4">
+        <nav class="navbar navbar-light bg-light">
+            <div class="container flex-wrap gap-2">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">@Configuration["Hotel:Nombre"]</a>
+                <div class="d-flex gap-3">
+                    <a asp-controller="Home" asp-action="Index">Inicio</a>
+                    <a asp-controller="Reservas" asp-action="Registrar">Registrar reserva</a>
+                    <a asp-controller="Reservas" asp-action="Index">Consultar reservas</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container pb-5">@RenderBody()</main>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
